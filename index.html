@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Vai e Vem | Login</title>
+    <script src="dado.js"></script>
+    <script defer src="login.js"></script>
+    <script src="https://kit.fontawesome.com/0362170bf2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1>JOGO DO VAI E VEM MÁGICO</h1>
+    </div>
+
+    
+    <div id="content">
+
+        <div id="ladoEsquerdo"></div>
+
+        <div id="jogo">
+            <div id="titulo">
+                <h2>Vamos jogar ??? <br>Definam o nome dos 3 jogadores!</h2>
+            </div>
+
+            <form class="players" action="jogo.html" method="post">
+                <div class="form-group">
+                    <label>JOGADOR NÚMERO 1:</label>
+                    <input type="text" name="jogador1" class="input1">
+                </div>
+                <div class="form-group">
+                    <label>JOGADOR NÚMERO 2:</label>
+                    <input type="text" name="jogador2" class="input2" disabled>
+                </div>
+                <div class="form-group">
+                    <label>JOGADOR NÚMERO 3</label>
+                    <input type="text" name="jogador3" class="input3" disabled>
+                </div>
+   
+                <button type="submit" value="Enviar" class="loginButton" disabled>Entrar</button>
+            </form>
+            
+        </div>
+        <div id="ladoDireito"></div>
+
+
+
+    </div>
+    
+    
+    
+    <div id="footer">
+        <h1>Desenvolvido por Ricardo Spicka - Março de 2023<br>
+            <i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/19982799070?" target="_blank">   (19) 98279-9070</a> - ricco.spicka@gmail.com
+        </h1>
+    </div>
+    
+</body>
+</html>

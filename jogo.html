@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Vai e Vem</title>
+    <script src="dado.js"></script>
+    <script src="https://kit.fontawesome.com/0362170bf2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>JOGO DO VAI E VEM MÁGICO</h1>
+    </div>
+
+    
+    
+    <div id="content">
+        <script>
+        window.onload = () =>{
+            const player1 = document.querySelector('.jog1');
+            const player2 = document.querySelector('.jog2');
+            const player3 = document.querySelector('.jog3');
+            const players = [localStorage.getItem('player1'), localStorage.getItem('player2'), localStorage.getItem('player3')];
+
+            shufflePlayers = players.sort(() => Math.random() - 0.5);
+
+            player1.innerHTML = shufflePlayers[0];
+            player2.innerHTML = shufflePlayers[1];
+            player3.innerHTML = shufflePlayers[2];
+        }
+        </script>
+        <div id="ladoEsquerdo">
+            <h2 class="jog1">Jogador 1</h2>
+            <i id="mago" class="fa-solid fa-hat-wizard"></i>
+            <h2 class="jog2">Jogador 2</h2>
+            <i id="fantasma" class="fa-solid fa-ghost"></i>
+            <h2 class="jog3">Jogador 3</h2>
+            <i id="dragão" class="fa-solid fa-dragon"></i>
+        </div>
+        <div id="jogo">
+            <table>
+                <tr>
+                    <td  class="bege" id="6"> 6</td>
+                    <td  class="bege" id="7"> 7</td>
+                    <td  class="bege" id="8"> 8</td>
+                    <td  class="bege" id="9"> 9</td>
+                    <td  class="bege" id="10">10</td>
+                    <td  class="bege" id="11">11</td>
+                    <td  class="azul"  id="12">12</td>
+                </tr>
+                <tr>
+                    <td class="azul" id="5"> 5</td>
+                    <td id="9"></td>
+                    <td id="10"></td>
+                    <td id="11"></td>
+                    <td id="12"></td>
+                    <td id="13"></td>
+                    <td class="azul"  id="13">13</td>
+                </tr>
+                <tr>
+                    <td class="bege" id="4"> 4</td>
+                    <td id="16"></td>
+                    <td class="bege" id="26">26</td>
+                    <td class="bege" id="27">27</td>
+                    <td id="L19">FIM</td>
+                    <td id="20"></td>
+                    <td class="bege" id="14">14</td>
+                </tr>
+                <tr>
+                    <td class="bege" id="3"> 3</td>
+                    <td id="23"></td>
+                    <td class="bege" id="25">25</td>
+                    <td id="25"></td>
+                    <td id="26"></td>
+                    <td id="27"></td>
+                    <td class="bege" id="15">15</td>
+                </tr>
+                <tr>
+                    <td class="bege" id="2"> 2</td>
+                    <td id="30"></td>
+                    <td class="azul" id="24">24</td>
+                    <td id="32"></td>
+                    <td id="33"></td>
+                    <td id="34"></td>
+                    <td class="bege" id="16">16</td>
+                </tr>
+                <tr>
+                    <td class="bege" id="1"> 1</td>
+                    <td id="37"></td>
+                    <td class="azul" id="23">23</td>
+                    <td id="39"></td>
+                    <td id="40"></td>
+                    <td id="41"></td>
+                    <td class="azul"  id="17">17</td>
+                </tr>
+                <tr>
+                    <td id="L43">INÍCIO</td>
+                    <td id="44"></td>
+                    <td class="bege" id="22">22</td>
+                    <td class="bege" id="21">21</td>
+                    <td class="bege" id="20">20</td>
+                    <td class="bege" id="19">19</td>
+                    <td class="bege" id="18">18</td>
+                </tr>
+            </table>
+            
+        </div>
+        <div id="ladoDireito">
+            <h2>FULANO,<br>é sua vez de jogar!<br>Escolha uma das opções:</h2>
+            <img src="face1.png" alt="dado" id="face">
+            <button id="rolar" onclick="rolarDado()">Rolar Dado</button>
+            <h2>OU</h2>
+            <button id="andarUm" onclick="rolarDado()">Andar 1</button>
+        </div>
+
+
+    </div>
+       
+    <div id="footer">
+        <h1>Desenvolvido por Ricardo Spicka - Março de 2023<br>
+            <i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/19982799070?" target="_blank">   (19) 98279-9070</a> - ricco.spicka@gmail.com
+        </h1>
+    </div>
+    
+</body>
+</html>
