@@ -1,7 +1,7 @@
 function rolarDado() {
-   
+
     var sorteio = 0;
-    
+
         sorteio = Math.floor(Math.random() * 6 + 1);
 
         switch(sorteio){

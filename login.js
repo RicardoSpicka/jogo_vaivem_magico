@@ -7,10 +7,8 @@ const player1 = document.querySelector('.jog1');
 const player2 = document.querySelector('.jog2');
 const player3 = document.querySelector('.jog3');
 
-
 var botao1 = false;
 var botao2 = false;
-
 
 const validateInput = ({target}) => {
     if (target.value.length > 2){
