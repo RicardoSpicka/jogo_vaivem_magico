@@ -5,29 +5,56 @@ var dado
 var playerTurn = ""
 var casaMago = 0; casaFantasma = 0, casaMago = 0
 let casas =["um"]
-let images = ["dice-00.png", "dice-01.png", "dice-02.png", "dice-03.png", "dice-04.png", "dice-05.png", "dice-06.png"]
+
 
 function carregaJogador(){
-        const players = [localStorage.getItem('player1'), localStorage.getItem('player2'), localStorage.getItem('player3')]
+        var players = [localStorage.getItem('player1'), localStorage.getItem('player2'), localStorage.getItem('player3')]
 
-        var player1 = document.querySelector(".jogUm")
-        var player2 = document.querySelector('.jogDois')
-        var player3 = document.querySelector('.jogTres')
+        var aux1 = document.querySelector(".jogUm")
+        var aux2 = document.querySelector('.jogDois')
+        var aux3 = document.querySelector('.jogTres')
+        var qtdade = 0
 
         shufflePlayers = players.sort(() => Math.random() - 0.5)
 
-        player1.innerHTML = shufflePlayers[0]
-        player2.innerHTML = shufflePlayers[1]
-        player3.innerHTML = shufflePlayers[2]
+        var player1 = shufflePlayers[0]
+        var player2 = shufflePlayers[1]
+        var player3 = shufflePlayers[2]
+
+        var novoPlayer = [player1, player2, player3]
+
+        if (player1 == 0){
+            criaJog2()
+            criaJog3()
+            qtdade = 2
+            jogador1 = shufflePlayers[1]
+            jogador2 = shufflePlayers[2]
+        } else if (player2 == 0){
+            criaJog1()
+            criaJog3()
+            qtdade = 2
+            jogador1 = shufflePlayers[0]
+            jogador2 = shufflePlayers[2]
+        } else if (player3 == 0) {
+            criaJog1()
+            criaJog2()
+            qtdade = 2
+            jogador1 = shufflePlayers[0]
+            jogador2 = shufflePlayers[1]
+        } else {
+            criaJog1()
+            criaJog2()
+            criaJog3()
+            qtdade = 3
+            jogador1 = shufflePlayers[0]
+            jogador2 = shufflePlayers[1]
+            jogador3 = shufflePlayers[2]
+        }
 
     iniciaJogo()
 }
 
 function iniciaJogo(){
-
-    jogador1 = shufflePlayers[0]
-    jogador2 = shufflePlayers[1]
-    jogador3 = shufflePlayers[2]
 
     posJog1 = 0
     posJog2 = 0
@@ -117,4 +144,37 @@ function rolarDado() {
         }
 
         elDado.classList.add('.tremer')
+}
+
+criaJog1 = () => {
+    var mago = document.createElement("img")
+    mago.src = "mago.png"
+    document.getElementById("ladoEsquerdo").appendChild(mago)
+
+    var jog1 = document.createElement("h2")
+    jog1.setAttribute("class", "jogTres")
+    jog1.innerHTML = shufflePlayers[0]
+    document.getElementById("ladoEsquerdo").appendChild(jog1)
+}
+
+criaJog2 = () => {
+    var fantasma = document.createElement("img")
+    fantasma.src = "fantasma.png"
+    document.getElementById("ladoEsquerdo").appendChild(fantasma)
+
+    var jog2 = document.createElement("h2")
+    jog2.setAttribute("class", "jogDois")
+    jog2.innerHTML = shufflePlayers[1]
+    document.getElementById("ladoEsquerdo").appendChild(jog2)
+}
+
+criaJog3 = () => {
+    var dragao = document.createElement("img")
+    dragao.src = "dragao.png"
+    document.getElementById("ladoEsquerdo").appendChild(dragao)
+
+    var jog3 = document.createElement("h2")
+    jog3.setAttribute("class", "jogTres")
+    jog3.innerHTML = shufflePlayers[2]
+    document.getElementById("ladoEsquerdo").appendChild(jog3)
 }

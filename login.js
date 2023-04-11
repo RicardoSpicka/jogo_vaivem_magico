@@ -1,11 +1,13 @@
 const input = document.querySelector('.input1');
 const input2 = document.querySelector('.input2');
 const input3 = document.querySelector('.input3');
-const button = document.querySelector('.loginButton');
-const form = document.querySelector('.players');
+
 const player1 = document.querySelector('.jog1');
 const player2 = document.querySelector('.jog2');
 const player3 = document.querySelector('.jog3');
+
+const button = document.querySelector('.loginButton');
+const form = document.querySelector('.players');
 
 var botao1 = false;
 var botao2 = false;
@@ -15,7 +17,7 @@ const validateInput = ({target}) => {
         botao1 = true;
         input2.removeAttribute('disabled');
         verificaInputs(botao1, botao2);
-        return;  
+        return;
     }
 }
 
@@ -24,7 +26,7 @@ const validateInput2 = ({target}) => {
         botao2 = true;
         input3.removeAttribute('disabled');
         verificaInputs(botao1, botao2);
-        return;     
+        return;
     }
 }
 
@@ -45,5 +47,3 @@ const handleSubmit = (event) =>{
 input.addEventListener('input', validateInput);
 input2.addEventListener('input', validateInput2);
 form.addEventListener('submit', handleSubmit);
-
-
