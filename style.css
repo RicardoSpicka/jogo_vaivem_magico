@@ -16,11 +16,10 @@ body{
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 90%;
-    height: auto;
+    height: 100vh;
     margin: 0px 5% 0px 5%;
     padding: 0px;
-    background-color: #dcebf1;
+    background-image: url(fundo.jpg);
 }
 
 #header{
@@ -45,20 +44,22 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #bcbcbc;
-    background-color:bisque;
-    border-radius: 15px;
-    box-shadow: 3px 2px 4px rgba(12,112,242, 0.30) ;
+}
+
+#ladoEsquerdo, #ladoDireito{
+    background-image: url('fundodireito.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #ladoEsquerdo h2{
-    margin: 20px;
-    font-size: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
-#ladoEsquerdo i{
-    font-size: 60px;
-    margin: 20px;
+#ladoEsquerdo img{
+    width: 50px;
 }
 
 #fantasma{
@@ -83,24 +84,14 @@ body{
     margin:40px 0px 20px 0px;
 }
 
-.tremer{
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0,0,0);
-
+#jogo h2{
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
-#rolar, #andarUm{
-    width: 120px;
-    height: 39px;
-    background-color: #0C70F2;
-    border: 0px;
-    color: white;
-    font-weight: 600;
-    font-size: 14px;
-    box-shadow: 3px 2px 4px rgba(12,112,242, 0.30) ;
-    cursor: pointer;
-    margin:20px;
-    border-radius: 5px;
+#jogo h2 spam{
+color: blue;
+font-weight: 900;
 }
 
 #jogo{
@@ -115,9 +106,7 @@ body{
 
 table{
     border-collapse: collapse;
-    background-color: #dcebf1;
     border-radius: 15px;
-
 }
 
 table tr, td{
@@ -150,25 +139,32 @@ table td img{
 
 .azul{
     background-color: #84ade3;
+    opacity: 1;
 }
 
 .bege{
-    background-color:rgba(255, 228, 196, 0.783);
+    background-color:rgb(249, 209, 161);
+    opacity: none;
 }
 
 .amarelo{
-    background-color:rgb(255, 255, 174)
+    background-color:rgb(255, 255, 174);
+    opacity: 1;
 }
 
 .verde{
-    background-color:rgb(184, 240, 179)
+    background-color:rgb(184, 240, 179);
+    opacity: 1;
+}
+
+.vazio{
+    background-color:rgba(184, 240, 179, 02);
+    opacity: 0.5;
 }
 
 #inicio{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-image: url("start.png");
-
 }
 
 #fim{

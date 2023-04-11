@@ -1,30 +1,50 @@
-function rolarDado() {
+const dice = document.querySelector('.dice')
 
-    var sorteio = 0;
+const randomDice = () => {
+  const random = Math.floor(Math.random() * 10);
+  if(random >= 1 && random <= 6){
+    rollDice(random)
+  } else {
+    randomDice()
+  }
+}
 
-        sorteio = Math.floor(Math.random() * 6 + 1);
+const rollDice = random => {
 
-        switch(sorteio){
-            case 1:
-                document.getElementById("face").src = "face1.png";
-                break;
-            case 2:
-                document.getElementById("face").src = "face2.png";
-                break;
-            case 3:
-                document.getElementById("face").src = "face3.png";
-                break;
-            case 4:
-                document.getElementById("face").src = "face4.png";
-                break;
-            case 5:
-                document.getElementById("face").src = "face5.png";
-                break;
-            case 6:
-                document.getElementById("face").src = "face6.png";
-                break;
-            default:
-                //caso contrário
-                break;
-        }
+  dice.style.animation = 'rolling 4s'
+
+  setTimeout(() => {
+    switch(random) {
+      case 1:
+        dice.style.transform = "rotateX(0deg) rotateY(0deg)"
+        break
+      case 6:
+        dice.style.transform = "rotateX(180deg) rotateY(0deg)"
+        break
+      case 2:
+        dice.style.transform = "rotateX(-90deg) rotateY(0deg)"
+        break
+      case 5:
+        dice.style.transform = "rotateX(90deg) rotateY(0deg)"
+        break
+      case 3:
+        dice.style.transform = "rotateX(0deg) rotateY(90deg)"
+        break
+      case 4:
+        dice.style.transform = "rotateX(0deg) rotateY(-90deg)"
+        break
+
+      default:
+        break
+    }
+
+    dice.style.animation = 'none'
+
+  }, 4050)
+}
+
+
+function rolarDado(){
+  const dice = document.querySelector('.dice')
+  randomDice()
 }
