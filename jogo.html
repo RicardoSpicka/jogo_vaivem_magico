@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, heigh=device-heigh, initial-scale=1.0">
     <title>Jogo Vai e Vem</title>
     <script src="jogo.js"></script>
     <script defer src="dado.js"></script>
@@ -14,148 +14,149 @@
 </head>
 
 <body>
-    <div id="header">
-        <h1>JOGO DO VAI E VEM MÁGICO</h1>
-    </div>
 
-    <div id="content">
-        <div id="ladoEsquerdo">
-
-            <img src="mago.png"  alt="mago"></img>
-            <h2 class="jogUm">Jogador 1</h2>
-
-            <img src="fantasma.png" alt="fantasma">
-            <h2 class="jogDois">Jogador 2</h2>
-
-            <img src="dragao.png" alt="dragão">
-            <h2 class="jogTres">Jogador 3</h2>
+        <div id="header">
+            <h1>JOGO DO VAI E VEM MÁGICO</h1>
         </div>
-        <div id="jogo">
-            <h2><spam class="jogador"></spam> é sua vez de jogar!</h2>
 
-            <table>
-                <tr>
-                    <td id="8" class="bege" onclick="andar('id')">8</td>
-                    <td id="9" class="bege" onclick="andar('id')">9</td>
-                    <td id="10" class="bege" onclick="andar('id')">10</td>
-                    <td id="11" class="azul" onclick="andar('id')">11</td>
-                    <td id="12" class="azul" onclick="andar('id')">12</td>
-                    <td id="13" class="bege" onclick="andar('id')">13</td>
-                    <td id="14" class="amarelo" onclick="andar('id')">14</td>
-                    <td id="15" class="bege" onclick="andar('id')">15</td>
-                    <td id="16" class="bege" onclick="andar('id')">16</td>
-                </tr>
-                <tr>
-                    <td id="7" class="bege" onclick="andar('id')">7</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="amarelo" id="portal"></td>
-                    <td class="vazio"></td>
-                    <td id="17" class="bege" onclick="andar('id')">17</td>
-                </tr>
-                <tr>
-                    <td id="6" class="bege" onclick="andar('id')">6</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="29" onclick="andar('id')">29</td>
-                    <td class="bege" id="28" onclick="andar('id')">28</td>
-                    <td class="bege" id="27" onclick="andar('id')">27</td>
-                    <td class="amarelo" id="26" onclick="andar('id')">26</td>
-                    <td class="vazio"></td>
-                    <td id="18" class="bege" onclick="andar('id')">18</td>
-                </tr>
-                <tr>
-                    <td id="5" class="azul " onclick="andar('id')">5</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="azul" id="30" onclick="andar('id')">30</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="25" onclick="andar('id')">25</td>
-                    <td class="vazio"></td>
-                    <td class="azul" id="19" onclick="andar('id')">19</td>
-                </tr>
-                <tr>
-                    <td id="4" class="bege" onclick="andar('id')">4</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="azul" id="31" onclick="andar('id')">31</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="24" onclick="andar('id')">24</td>
-                    <td class="vazio"></td>
-                    <td class="azul" id="20" onclick="andar('id')">20</td>
-                </tr>
-                <tr>
-                    <td id="3" class="bege" onclick="andar('id')">3</td>
-                    <td id="2" class="bege" onclick="andar('id')">2</td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="32" onclick="andar('id')">32</td>
-                    <td class="bege" id="33" onclick="andar('id')">33</td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="23" onclick="andar('id')">23</td>
-                    <td class="bege" id="22" onclick="andar('id')">22</td>
-                    <td class="azul" id="21" onclick="andar('id')">21</td>
-                </tr>
-                <tr>
-                    <td class="vazio"></td>
-                    <td id="1" class="bege" onclick="andar('id')">1</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="34" onclick="andar('id')">34</td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                    <td class="vazio"></td>
-                </tr>
-                <tr>
-                    <td class="verde" colspan="3">
-                        <div id="inicio">
-                            <div id="jog1"></div>
-                            <div id="jog2"></div>
-                            <div id="jog3"></div>
+        <div class="content">
+            <div id="ladoEsquerdo">
+
+                <img src="mago.png"  alt="mago"></img>
+                <h2 class="jogUm">Jogador 1</h2>
+
+                <img src="fantasma.png" alt="fantasma">
+                <h2 class="jogDois">Jogador 2</h2>
+
+                <img src="dragao.png" alt="dragão">
+                <h2 class="jogTres">Jogador 3</h2>
+            </div>
+            <div id="jogo">
+                <h2><spam class="jogador"></spam> é sua vez de jogar!</h2>
+
+                <table>
+                    <tr>
+                        <td id="8" class="bege" onclick="andar('id')">8</td>
+                        <td id="9" class="bege" onclick="andar('id')">9</td>
+                        <td id="10" class="bege" onclick="andar('id')">10</td>
+                        <td id="11" class="azul" onclick="andar('id')">11</td>
+                        <td id="12" class="azul" onclick="andar('id')">12</td>
+                        <td id="13" class="bege" onclick="andar('id')">13</td>
+                        <td id="14" class="amarelo" onclick="andar('id')">14</td>
+                        <td id="15" class="bege" onclick="andar('id')">15</td>
+                        <td id="16" class="bege" onclick="andar('id')">16</td>
+                    </tr>
+                    <tr>
+                        <td id="7" class="bege" onclick="andar('id')">7</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="amarelo"><div id="portal"></div></td>
+                        <td class="vazio"></td>
+                        <td id="17" class="bege" onclick="andar('id')">17</td>
+                    </tr>
+                    <tr>
+                        <td id="6" class="bege" onclick="andar('id')">6</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="29" onclick="andar('id')">29</td>
+                        <td class="bege" id="28" onclick="andar('id')">28</td>
+                        <td class="bege" id="27" onclick="andar('id')">27</td>
+                        <td class="amarelo" id="26" onclick="andar('id')">26</td>
+                        <td class="vazio"></td>
+                        <td id="18" class="bege" onclick="andar('id')">18</td>
+                    </tr>
+                    <tr>
+                        <td id="5" class="azul " onclick="andar('id')">5</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="azul" id="30" onclick="andar('id')">30</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="25" onclick="andar('id')">25</td>
+                        <td class="vazio"></td>
+                        <td class="azul" id="19" onclick="andar('id')">19</td>
+                    </tr>
+                    <tr>
+                        <td id="4" class="bege" onclick="andar('id')">4</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="azul" id="31" onclick="andar('id')">31</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="24" onclick="andar('id')">24</td>
+                        <td class="vazio"></td>
+                        <td class="azul" id="20" onclick="andar('id')">20</td>
+                    </tr>
+                    <tr>
+                        <td id="3" class="bege" onclick="andar('id')">3</td>
+                        <td id="2" class="bege" onclick="andar('id')">2</td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="32" onclick="andar('id')">32</td>
+                        <td class="bege" id="33" onclick="andar('id')">33</td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="23" onclick="andar('id')">23</td>
+                        <td class="bege" id="22" onclick="andar('id')">22</td>
+                        <td class="azul" id="21" onclick="andar('id')">21</td>
+                    </tr>
+                    <tr>
+                        <td class="vazio"></td>
+                        <td id="1" class="bege" onclick="andar('id')">1</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="34" onclick="andar('id')">34</td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                        <td class="vazio"></td>
+                    </tr>
+                    <tr>
+                        <td class="verde" colspan="3">
+                            <div id="inicio">
+                                <div id="jog1"></div>
+                                <div id="jog2"></div>
+                                <div id="jog3"></div>
+                            </div>
+                        </td>
+                        <td class="vazio"></td>
+                        <td class="bege" id="35" onclick="andar('id')">35</td>
+                        <td class="azul" id="36" onclick="andar('id')">36</td>
+                        <td class="bege" id="37" onclick="andar('id')">37</td>
+                        <td class="verde" colspan="2"><div id="fim"></div></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="ladoDireito">
+                    <div class="container">
+                        <div class="dice">
+                            <div class="face front"></div>
+                            <div class="face back"></div>
+                            <div class="face top"></div>
+                            <div class="face bottom"></div>
+                            <div class="face right"></div>
+                            <div class="face left"></div>
                         </div>
-                    </td>
-                    <td class="vazio"></td>
-                    <td class="bege" id="35" onclick="andar('id')">35</td>
-                    <td class="azul" id="36" onclick="andar('id')">36</td>
-                    <td class="bege" id="37" onclick="andar('id')">37</td>
-                    <td id="fim" class="verde" colspan="2"></td>
-                </tr>
-            </table>
-
-        </div>
-        <div id="ladoDireito">
-
-
-                <div class="container">
-                    <div class="dice">
-                        <div class="face front"></div>
-                        <div class="face back"></div>
-                        <div class="face top"></div>
-                        <div class="face bottom"></div>
-                        <div class="face right"></div>
-                        <div class="face left"></div>
+                        <button class="roll" onclick='rolarDado()'>
+                            Rolar o dado
+                        </button>
                     </div>
-                    <button class="roll" onclick='rolarDado()'>
-                        Rolar o dado
-                    </button>
-                </div>
+            </div>
         </div>
-    </div>
 
-    <div id="footer">
-        <h1>Desenvolvido por Ricardo Spicka - Março de 2023<br>
-            <i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/19982799070?" target="_blank"> (19)
-                98279-9070</a> - ricco.spicka@gmail.com
-        </h1>
-    </div>
-    <script>
-        onload = (this.window, carregaJogador())
-    </script>
+
+        <div id="footer">
+            <h1>Desenvolvido por Ricardo Spicka - Março de 2023<br>
+                <i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/19982799070?" target="_blank"> (19)
+                    98279-9070</a> - ricco.spicka@gmail.com
+            </h1>
+        </div>
+        <script>
+            onload = (this.window, carregaJogador())
+        </script>
+
 </body>
 
 </html>

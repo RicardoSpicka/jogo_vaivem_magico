@@ -3,50 +3,46 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
     box-sizing: border-box;
     font-family: 'Yatra One', cursive;
     font-weight: 100;
 }
 
-#header, #body, #footer{
-    margin: 20px 0px 20px 0px;
-}
-
-body{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100vh;
-    margin: 0px 5% 0px 5%;
-    padding: 0px;
-    background-image: url(fundo.jpg);
+html{
+overflow-y:hidden;
+overflow-x:hidden;
+font-size: 62.5%;
+width: 100vw;
+height: 100vh;
+background: rgb(196, 195, 195);
 }
 
 #header{
     text-align: center;
-    font-size: 35px;
+    font-size: 3rem;
 }
 
 #header h1{
-    padding: 10px;
+    padding: 1rem;
 }
 
-#content{
+.content{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     height: max-content;
+    width: 100%;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-around;
-    text-align: center;
+    grid-template-columns: 20% auto 20%;
 }
 
 #ladoEsquerdo, #ladoDireito{
+    height: 72rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#ladoEsquerdo, #ladoDireito{
     background-image: url('fundodireito.png');
     background-size: contain;
     background-position: center;
@@ -54,39 +50,29 @@ body{
 }
 
 #ladoEsquerdo h2{
-    margin-bottom: 20px;
-    font-size: 30px;
+    margin-bottom: 2rem;
+    font-size: 3rem;
 }
 
 #ladoEsquerdo img{
-    width: 50px;
+    width: 7rem;
 }
 
 #fantasma{
     color: chocolate;
-    cursor: pointer;
 }
 
 #dragão{
     color:green;
-    cursor: pointer;
 }
 
 #mago{
     color: midnightblue;
-    cursor: pointer;
-}
-
-#faceDado{
-    width: 120px;
-    height: 120px;
-    box-shadow: #0C70F2;
-    margin:40px 0px 20px 0px;
 }
 
 #jogo h2{
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    margin-bottom: 2rem;
 }
 
 #jogo h2 spam{
@@ -97,20 +83,20 @@ font-weight: 900;
 #jogo{
     display: flex;
     flex-direction: column;
-    width: 1100px;
-    height: 670px;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2rem;
 }
 
 table{
     border-collapse: collapse;
-    border-radius: 15px;
 }
 
 table tr, td{
-    font-size: 50px;
+    font-size: 4.5rem;
+    border-radius: 2rem;
 }
 
 table:focus{
@@ -118,13 +104,12 @@ table:focus{
 }
 
 .bege, .azul, .amarelo, .verde{
-    border: 1px solid black;
-    box-shadow: 3px 2px 4px rgba(12,112,242, 0.30) ;
+    box-shadow: 1rem 1rem 1rem rgba(10, 19, 31, 0.3) ;
 }
 
 table td{
-    width: 75px;
-    height: 75px;
+    width: 7.5rem;
+    height: 7.5rem;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -133,7 +118,7 @@ table td{
 }
 
 table td img{
-    height: 60px;
+    height: 6rem;
     padding: auto;
 }
 
@@ -144,22 +129,14 @@ table td img{
 
 .bege{
     background-color:rgb(249, 209, 161);
-    opacity: none;
 }
 
 .amarelo{
     background-color:rgb(255, 255, 174);
-    opacity: 1;
 }
 
 .verde{
     background-color:rgb(184, 240, 179);
-    opacity: 1;
-}
-
-.vazio{
-    background-color:rgba(184, 240, 179, 02);
-    opacity: 0.5;
 }
 
 #inicio{
@@ -168,10 +145,18 @@ table td img{
 }
 
 #fim{
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-position: center;
     background-image: url("finished.png");
+    background-size: 4rem;
 }
 
 #portal{
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 4rem;
     background-image: url("portal.png");
 }
 
@@ -182,9 +167,9 @@ table td img{
 }
 
 #jog1, #jog2, #jog3{
-    height: 70px;
+    height: 7rem;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 5rem;
     background-position: center;
 }
 
@@ -202,19 +187,25 @@ table td img{
 
 
 #footer{
+    margin-top: 2rem;
     text-align: center;
 }
 
 #footer h1{
-    font-size: 20px;
+    font-size: 2rem;
 }
+
+/*Aqui ACABA a estilização da tela do JOGO*/
+
+/*Aqui COMEÇA a estilização da tela do LOGIN*/
 
 #titulo h2{
-    font-size: 40px;
+    font-size: 4rem;
     margin-bottom: 40px;
+    text-align: center;
 }
 
-.contact{
+.players{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -226,43 +217,48 @@ table td img{
 }
 
 .form-group input{
-    width: 400px;
-    border-radius: 10px;
-    font-size: 20px;
-    height: 30px;
-    border: 1px solid #bcbcbc;
-    padding: 10px;
+    width: 40rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    height: 3rem;
+    border: 1px solid #9d9494;
+    padding: 1rem;
 
 }
 
 .form-group input::placeholder{
     color: rgb(82, 80, 80);
-    font-size: 18px;
+    font-size: 2rem;
     text-align: center;
 }
 
 .form-group label{
-    font-size: 25px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
-.players button[type="submit"]{
-    width: 200px;
-    height: auto;
-    margin-top: 20px;
-    background-color: #015f01;;
-    color: #bdd1de;
-    border-radius: 5px;
-    margin-top: 30px;
-    font-size: 25px;
+.loginButton{
     cursor: pointer;
+    color: #b33951;
+    margin-top: 4rem;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 20px;
+    border: 2px solid #b33951;
+    transition: .4s;
 }
 
-    .contact button[type="submit"]:disabled{
-        background-color: #015f0148;;
+    .loginButton:hover{
+        color: #fff;
+        background: #b33951;
+    }
+
+    .loginButton:disabled{
         color: #ffffff;
-        cursor: auto;
+        cursor: not-allowed;
+        color: #e8b1bc;
     }
 
 @keyframes shake{
