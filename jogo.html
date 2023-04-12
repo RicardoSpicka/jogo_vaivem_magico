@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo Vai e Vem</title>
-    <script src="jogo.js"></script>
     <script defer src="dado.js"></script>
     <script src="https://kit.fontawesome.com/0362170bf2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -24,99 +23,98 @@
                 <h2 style="color: white;">jose</h2>
             </div>
             <div id="jogo">
-                <h2><spam class="jogador"></spam> é sua vez de jogar!</h2>
+                <h2>
+                    <spam class="jogador"></spam>
+                    <spam class="frase"></spam>
+                </h2>
 
                 <table>
                     <tr>
-                        <td id="8" class="bege" onclick="andar('id')">8</td>
-                        <td id="9" class="bege" onclick="andar('id')">9</td>
-                        <td id="10" class="bege" onclick="andar('id')">10</td>
-                        <td id="11" class="azul" onclick="andar('id')">11</td>
-                        <td id="12" class="azul" onclick="andar('id')">12</td>
-                        <td id="13" class="bege" onclick="andar('id')">13</td>
-                        <td id="14" class="amarelo" onclick="andar('id')">14</td>
-                        <td id="15" class="bege" onclick="andar('id')">15</td>
-                        <td id="16" class="bege" onclick="andar('id')">16</td>
+                        <td id="8" onclick="andar(this.id)" class="bege" >8</td>
+                        <td id="9" onclick="andar(this.id)" class="bege" >9</td>
+                        <td id="10" onclick="andar(this.id)" class="bege" >10</td>
+                        <td id="11" onclick="andar(this.id)" class="azul" >11</td>
+                        <td id="12" onclick="andar(this.id)" class="azul" >12</td>
+                        <td id="13" onclick="andar(this.id)" class="bege" >13</td>
+                        <td id="14" class="amarelo" >14</td>
+                        <td id="15" onclick="andar(this.id)" class="bege" >15</td>
+                        <td id="16" onclick="andar(this.id)" class="bege" >16</td>
                     </tr>
                     <tr>
-                        <td id="7" class="bege" onclick="andar('id')">7</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="amarelo"><div id="portal"></div></td>
-                        <td class="vazio"></td>
-                        <td id="17" class="bege" onclick="andar('id')">17</td>
+                        <td id="7" onclick="andar(this.id)" class="bege" >7</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="background-color: rgb(255, 255, 174);"><div id="portal"></div></td>
+                        <td></td>
+                        <td id="17" onclick="andar(this.id)" class="bege" >17</td>
                     </tr>
                     <tr>
-                        <td id="6" class="bege" onclick="andar('id')">6</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="29" onclick="andar('id')">29</td>
-                        <td class="bege" id="28" onclick="andar('id')">28</td>
-                        <td class="bege" id="27" onclick="andar('id')">27</td>
-                        <td class="amarelo" id="26" onclick="andar('id')">26</td>
-                        <td class="vazio"></td>
-                        <td id="18" class="bege" onclick="andar('id')">18</td>
+                        <td id="6" onclick="andar(this.id)" class="bege" >6</td>
+                        <td></td>
+                        <td></td>
+                        <td id="29" onclick="andar(this.id)" class="bege">29</td>
+                        <td id="28" onclick="andar(this.id)" class="bege">28</td>
+                        <td id="27" onclick="andar(this.id)" class="bege">27</td>
+                        <td id="26" class="amarelo" >26</td>
+                        <td></td>
+                        <td id="18" onclick="andar(this.id)" class="bege" >18</td>
                     </tr>
                     <tr>
-                        <td id="5" class="azul " onclick="andar('id')">5</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="azul" id="30" onclick="andar('id')">30</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="25" onclick="andar('id')">25</td>
-                        <td class="vazio"></td>
-                        <td class="azul" id="19" onclick="andar('id')">19</td>
+                        <td id="5" onclick="andar(this.id)" class="azul" >5</td>
+                        <td></td>
+                        <td></td>
+                        <td id="30" onclick="andar(this.id)" class="azul" >30</td>
+                        <td></td>
+                        <td></td>
+                        <td id="25" onclick="andar(this.id)" class="bege" >25</td>
+                        <td></td>
+                        <td id="19" onclick="andar(this.id)" class="azul" >19</td>
                     </tr>
                     <tr>
-                        <td id="4" class="bege" onclick="andar('id')">4</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="azul" id="31" onclick="andar('id')">31</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="24" onclick="andar('id')">24</td>
-                        <td class="vazio"></td>
-                        <td class="azul" id="20" onclick="andar('id')">20</td>
+                        <td id="4" onclick="andar(this.id)" onclick="andar(this.id)" class="bege" >4</td>
+                        <td></td>
+                        <td></td>
+                        <td id="31" onclick="andar(this.id)" class="azul" >31</td>
+                        <td></td>
+                        <td></td>
+                        <td  id="24" onclick="andar(this.id)" class="bege" >24</td>
+                        <td></td>
+                        <td  id="20" onclick="andar(this.id)" class="azul" >20</td>
                     </tr>
                     <tr>
-                        <td id="3" class="bege" onclick="andar('id')">3</td>
-                        <td id="2" class="bege" onclick="andar('id')">2</td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="32" onclick="andar('id')">32</td>
-                        <td class="bege" id="33" onclick="andar('id')">33</td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="23" onclick="andar('id')">23</td>
-                        <td class="bege" id="22" onclick="andar('id')">22</td>
-                        <td class="azul" id="21" onclick="andar('id')">21</td>
+                        <td id="3" onclick="andar(this.id)" class="bege" >3</td>
+                        <td id="2" onclick="andar(this.id)" class="bege" >2</td>
+                        <td></td>
+                        <td id="32" onclick="andar(this.id)" class="bege" >32</td>
+                        <td id="33" onclick="andar(this.id)" class="bege" >33</td>
+                        <td></td>
+                        <td id="23" onclick="andar(this.id)" class="bege"  >23</td>
+                        <td id="22" onclick="andar(this.id)" class="bege" >22</td>
+                        <td id="21" onclick="andar(this.id)" class="azul" >21</td>
                     </tr>
                     <tr>
-                        <td class="vazio"></td>
-                        <td id="1" class="bege" onclick="andar('id')">1</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="34" onclick="andar('id')">34</td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
-                        <td class="vazio"></td>
+                        <td></td>
+                        <td id="1" clicked onclick="andar(this.id)" class="bege" >1</td>
+                        <td></td>
+                        <td></td>
+                        <td id="34" onclick="andar(this.id)" class="bege" >34</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td class="verde" colspan="3">
-                            <div id="inicio">
-                                <div id="jog1"></div>
-                                <div id="jog2"></div>
-                                <div id="jog3"></div>
-                            </div>
-                        </td>
-                        <td class="vazio"></td>
-                        <td class="bege" id="35" onclick="andar('id')">35</td>
-                        <td class="azul" id="36" onclick="andar('id')">36</td>
-                        <td class="bege" id="37" onclick="andar('id')">37</td>
-                        <td class="verde" colspan="2"><div id="fim"></div></td>
+                        <td id="101" onclick="andar(this.id)" class="verde"></td>
+                        <td id="102" onclick="andar(this.id)" class="verde"></td>
+                        <td id="103" onclick="andar(this.id)" class="verde"></td>
+                        <td></td>
+                        <td id="35" onclick="andar(this.id)" class="bege">35</td>
+                        <td id="36" onclick="andar(this.id)" class="azul">36</td>
+                        <td id="37" onclick="andar(this.id)" class="bege" >37</td>
+                        <td id="38" onclick="andar(this.id)" class="verde" colspan="2"><div id="fim"></div></td>
                     </tr>
                 </table>
 
@@ -134,6 +132,10 @@
                         <button class="roll" onclick='rolarDado()'>
                             Rolar o dado
                         </button>
+                        <h3 style="font-size: 3rem; margin-top: 2rem;">OU</h3>
+                        <button class="walk" onclick='andarUma()' disabled>
+                            Andar 1
+                        </button>
                     </div>
             </div>
         </div>
@@ -145,6 +147,7 @@
                     98279-9070</a> - ricco.spicka@gmail.com
             </h1>
         </div>
+        <script src="jogo.js"></script>
         <script>
             onload = (this.window, carregaJogador())
         </script>

@@ -52,7 +52,6 @@ background: rgb(196, 195, 195);
 #ladoEsquerdo h2{
     margin-bottom: 2rem;
     font-size: 3rem;
-
 }
 
 #ladoEsquerdo img{
@@ -72,11 +71,12 @@ background: rgb(196, 195, 195);
 }
 
 #jogo h2{
-    font-size: 4rem;
+    text-align: center;
+    font-size: 3rem;
     margin-bottom: 2rem;
 }
 
-#jogo h2 spam{
+.jogador{
 color: blue;
 font-weight: 900;
 }
@@ -108,9 +108,13 @@ table:focus{
     box-shadow: 1rem 1rem 1rem rgba(10, 19, 31, 0.3) ;
 }
 
+.clicavel{
+    cursor: pointer;
+}
+
 table td{
     width: 7.5rem;
-    height: 7.5rem;
+    height: 6.5rem;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -118,9 +122,11 @@ table td{
     user-select: none;
 }
 
-table td img{
+td{
     height: 6rem;
-    padding: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5rem;
 }
 
 .azul{
@@ -138,6 +144,7 @@ table td img{
 
 .verde{
     background-color:rgb(184, 240, 179);
+    color: rgb(184, 240, 179);
 }
 
 #inicio{
@@ -173,19 +180,6 @@ table td img{
     background-size: 5rem;
     background-position: center;
 }
-
-#jog1{
-    background-image: url("mago.png");
-}
-
-#jog2{
-    background-image: url("fantasma.png");
-}
-
-#jog3{
-    background-image: url("dragao.png");
-}
-
 
 #footer{
     margin-top: 2rem;

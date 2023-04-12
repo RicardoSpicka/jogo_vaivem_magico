@@ -131,10 +131,10 @@
     Botao rolar dado
 */
 
-.roll{
+.roll, .walk{
   cursor: pointer;
   color: #b33951;
-  margin-top: 60px;
+  margin-top: 30px;
   padding: 6px 12px;
   border-radius: 3px;
   font-weight: 700;
@@ -143,7 +143,13 @@
   transition: .4s;
 }
 
-.roll:hover{
+.roll:hover, .walk:hover{
   color: #fff;
   background: #b33951;
+}
+
+.walk:disabled{
+  color: #ffffff;
+  cursor: not-allowed;
+  color: #e8b1bc;
 }

@@ -1,10 +1,29 @@
 var shufflePlayers = []
 var jogador1 = "", jogador2 = "", jogador3 = ""
-var posJog1, posJog2, posJog3
+var posMago, posFantasma, posDragao
 var dado
 var playerTurn = ""
-var casaMago = 0; casaFantasma = 0, casaMago = 0
-let casas =["um"]
+var casaMago, casaFantasma, casaMago
+var casaAtualMago = 101
+var casaAtualFantasma = 102
+var casaAtualDragao = 103
+var test = false
+var turns = 0
+var casaAtualMagoEl
+var casaAtualFantasmaEl
+var casaAtualDragaoEl
+
+var msg1 = 'é sua vez de jogar! Role o dado!'
+var msg2 = 'é sua vez de jogar! Role o dado OU ande 1 casa!'
+var msgDragao = '<br>Você pode andar 1 casa a mais do que saiu no dado.'
+var msgFantasma = '<br>Você pode "pular" os cantos.'
+var msgMago = '<br>Você pode jogar novamente se tirar 2 ou 5.'
+
+let i = 0
+
+casaAtualMagoEl = document.getElementById(casaAtualMago)
+casaAtualFantasmaEl = document.getElementById(casaAtualFantasma)
+casaAtualDragaoEl = document.getElementById(casaAtualDragao)
 
 
 function carregaJogador(){
@@ -56,54 +75,92 @@ function carregaJogador(){
 
 function iniciaJogo(){
 
-    posJog1 = 0
-    posJog2 = 0
-    posJog3 = 0
+    var andaUm = document.querySelector('.walk')
+    andaUm.setAttribute=('disable')
 
     playerTurn = jogador1
+    casaAtualMagoEl.style.backgroundImage = 'url(mago.png)'
+    casaAtualFantasmaEl.style.backgroundImage = 'url(fantasma.png)'
+    casaAtualDragaoEl.style.backgroundImage = 'url(dragao.png)'
 
     atualizaJogador()
 }
 
 //ATUALIZA O NOME DO JOGADOR NO PAINEL DIREITO//
 function atualizaJogador(){
-    const fulano = document.querySelector('.jogador')
-    fulano.innerHTML = (playerTurn + ',')
+
+    var bloq = document.querySelectorAll('.bege, .azul, .verde, .amarelo').forEach(function(td) {
+        td.style.pointerEvents = 'none';
+        td.style.cursor = 'pointer';
+    })
+
+    if ( turns < 7 ){
+        console.log(turns)
+        turns++
+      } else {
+        var btnAndarUm = document.querySelector('.walk')
+        btnAndarUm.removeAttribute('disabled');
+      }
+
+    const jogador = document.querySelector('.jogador')
+    jogador.innerHTML = (playerTurn + ', ')
+    const frase = document.querySelector('.frase')
+    let msg3
+    if (jogador1 == playerTurn) msg3 = msgMago
+    if (jogador2 == playerTurn) msg3 = msgFantasma
+    if (jogador3 == playerTurn) msg3 = msgDragao
+    turns < 7 ? frase.innerHTML = (msg1 + msg3) : frase.innerHTML = (msg2 + msg3)
+
 }
 
-function andar(id){
+function andar(id) {
+            casaAtualMagoEl = document.getElementById(casaAtualMago)
+            casaAtualFantasmaEl = document.getElementById(casaAtualFantasma)
+            casaAtualDragaoEl = document.getElementById(casaAtualDragao)
+            console.log("")
+            const casaNova = document.getElementById(id)
 
-    var casaNova = document.getElementById(id)
-    var casaAntigaMago =  document.getElementById(casaMago)
-    var casaAntigaFantasma =  document.getElementById(casaFantasma)
-    var casaAntigaDragão =  document.getElementById(casaMago)
 
-    if (playerTurn == jogador1){
-/*         casaNova.style.backgroundImage = "url('mago.png')" //add Personagem
-        casaNova.removeEventListener('onclick', andar) //remove evento de andar
-        casaNova.style.cursor = "none" //remove o ponteiro do cursor
-        casaAntigaMago.style.backgroundImage = '' //remove o Personagem da casa antiga
-        casaAntigaMago.addEventListener('onclick', andar)
-        casaMago = id
-        playerTurn = jogador2 */
-    } else if (playerTurn == jogador2){
-/*         casaNova.style.backgroundImage = "url('fantasma.png')"
-        casaNova.removeEventListener('onclick', andar) //remove evento de andar
-        casaNova.style.cursor = "none" //remove o ponteiro do cursor
-        casaAntigaFantasma.style.backgroundImage = '' //remove o Personagem da casa antiga
-        casaAntigaFantasma.addEventListener('onclick', andar)
-        casaFantasma = id
-        playerTurn = jogador3 */
-    } else if (playerTurn == jogador3){
-/*         casaNova.style.backgroundImage = "url('dragao.png')"
-        casaNova.removeEventListener('onclick', andar) //remove evento de andar
-        casaNova.style.cursor = "none" //remove o ponteiro do cursor
-        casaAntigaDragão.style.backgroundImage = '' //remove o Personagem da casa antiga
-        casaAntigaDragão.addEventListener('onclick', andar)
-        casaDragao = id
-        playerTurn = jogador1 */
-    }
-    /* atualizaJogador() */
+             if (jogador1 == playerTurn)
+                {
+
+
+
+
+                    casaNova.style.backgroundImage = "url('mago.png')"
+                    casaNova.innerHTML=""
+                    casaAtualMagoEl.style.backgroundImage = ""
+                    casaAtualMagoEl.innerHTML=`${casaAtualMago}`
+                    casaAtualMago = id
+                    playerTurn = jogador2
+                    atualizaJogador()
+                }
+                else if (jogador2 == playerTurn)
+                {
+
+
+                    casaNova.style.backgroundImage = "url('fantasma.png')"
+                    casaNova.innerHTML=""
+                    casaAtualFantasmaEl.style.backgroundImage = ""
+                    casaAtualFantasmaEl.innerHTML=`${casaAtualFantasma}`
+                    casaAtualFantasma = id
+                    playerTurn = jogador3
+                    atualizaJogador()
+                }
+                else
+                {
+
+
+                    casaNova.style.backgroundImage = "url('dragao.png')"
+                    casaNova.innerHTML=""
+                    casaAtualDragaoEl.style.backgroundImage = ""
+                    casaAtualDragaoEl.innerHTML=`${casaAtualDragao}`
+                    casaAtualDragao = id
+                    playerTurn = jogador1
+                    atualizaJogador()
+                }
+
+
 }
 
 function newPopup(){
@@ -155,6 +212,7 @@ criaJog1 = () => {
     jog1.setAttribute("class", "jogTres")
     jog1.innerHTML = shufflePlayers[0]
     document.getElementById("ladoEsquerdo").appendChild(jog1)
+
 }
 
 criaJog2 = () => {
@@ -178,3 +236,91 @@ criaJog3 = () => {
     jog3.innerHTML = shufflePlayers[2]
     document.getElementById("ladoEsquerdo").appendChild(jog3)
 }
+
+andarUma = () => {
+
+    if (jogador1 == playerTurn)
+    {
+        let casaNova
+        casaAtualMago == 101 ? casaAtualMago = 0 : casaAtualMago
+        let aux = parseInt(casaAtualMago) +1
+        casaNova = aux
+        casaNova = document.getElementById(aux)
+        casaAtualMagoEl = document.getElementById(casaAtualMago)
+        casaNova.style.backgroundImage = "url('mago.png')"
+        casaNova.innerHTML = ""
+        casaAtualMagoEl.style.backgroundImage = ""
+        casaAtualMagoEl.innerHTML = `${casaAtualMago}`
+        playerTurn = jogador2
+        casaAtualMago = aux
+        atualizaJogador()
+    }
+        else if (jogador2 == playerTurn)
+    {
+        let casaNova
+        casaAtualFantasma == 102 ? casaAtualFantasma = 0 : casaAtualFantasma
+        let aux = parseInt(casaAtualFantasma) + 1
+        casaNova = aux
+        casaNova = document.getElementById(aux)
+        casaAtualFantasmaEl = document.getElementById(casaAtualFantasma)
+        casaNova.style.backgroundImage = "url('fantasma.png')"
+        casaNova.innerHTML = ""
+        casaAtualFantasmaEl.style.backgroundImage = ""
+        casaAtualFantasmaEl.innerHTML = `${casaAtualFantasma}`
+        playerTurn = jogador3
+        casaAtualFantasma = aux
+        atualizaJogador()
+    }
+        else
+    {
+        let casaNova
+        casaAtualDragao == 103 ? casaAtualDragao = 0 : casaAtualDragao
+        let aux = parseInt(casaAtualDragao) + 1
+        casaNova = aux
+        casaNova = document.getElementById(aux)
+        casaAtualDragaoEl = document.getElementById(casaAtualDragao)
+        casaNova.style.backgroundImage = "url('dragao.png')"
+        casaNova.innerHTML = ""
+        casaAtualDragaoEl.style.backgroundImage = ""
+        casaAtualDragaoEl.innerHTML = `${casaAtualDragao}`
+        playerTurn = jogador1
+        casaAtualDragao = aux
+
+        atualizaJogador()
+    }
+}
+
+/* verificaCasaOcupada = (casaNova) => {
+
+    if (casaNova == casaAtualFantasma){
+        posMago = Math.abs(casaAtualMago-casaAtualFantasma)
+        posDragao = Math.abs(casaAtualDragao-casaAtualFantasma)
+        console.log(`Diferença entre Mago e Fantasma -> ${posMago}`)
+        console.log(`Diferença entre Dragao e Fantasma -> ${posDragao}`)
+        casaAtualFantasma = casaNova-1
+        casaAtualFantasmaEl = document.getElementById(casaAtualFantasma)
+        casaAtualFantasmaEl.style.backgroundImage = "url('fantasma.png')"
+        test = true
+    } else if (casaNova == casaAtualDragao){
+        posMago = Math.abs(casaAtualMago-casaAtualDragao)
+        posFantasma = Math.abs(casaAtualFantasma-casaAtualDragao)
+        console.log(`Diferença entre Mago e Fantasma -> ${posMago}`)
+        console.log(`Diferença entre Dragao e Fantasma -> ${posFantasma}`)
+        casaAtualDragao = casaNova-1
+        casaAtualDragaoEl = document.getElementById(casaAtualDragao)
+        casaAtualDragaoEl.style.backgroundImage = "url('dragao.png')"
+        test = true
+    } else if (casaNova == casaAtualMago){
+        posDragao = Math.abs(casaAtualDragao-casaAtualMago)
+        posFantasma = Math.abs(casaAtualFantasma-casaAtualMago)
+        console.log(`Diferença entre Mago e Fantasma -> ${posMago}`)
+        console.log(`Diferença entre Dragao e Fantasma -> ${posFantasma}`)
+        casaAtualMago = casaNova-1
+        casaAtualMagoEl = document.getElementById(casaAtualMago)
+        casaAtualMagoEl.style.backgroundImage = "url('mago.png')"
+        test = true
+    } else {
+        test = false
+    }
+
+} */

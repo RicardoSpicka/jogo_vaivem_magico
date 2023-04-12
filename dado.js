@@ -43,8 +43,13 @@ const rollDice = random => {
   }, 4050)
 }
 
-
 function rolarDado(){
   const dice = document.querySelector('.dice')
   randomDice()
+
+  var bloq = document.querySelectorAll('.bege, .azul, .verde, .amarelo').forEach(function(td) {
+    td.style.pointerEvents = 'visible';
+    td.style.cursor = 'pointer';
+  })
+
 }
